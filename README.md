@@ -24,7 +24,7 @@ out:
 ## Concatenate files together
 ```
 for file in files:
-    df=pd.read_csv(r"C:/Users/mq20206390/Downloads/TWWETALL/"+ file, compression = "gzip" , index_col=0)
+    df=pd.read_csv(r"C:/Users/[folerpath]/TWWETALL/"+ file, compression = "gzip" , index_col=0)
 all_data.head()
 ```
 You will get a dataframe with the following columns:
