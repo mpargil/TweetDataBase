@@ -1,5 +1,12 @@
-# About TweetDataBase
+# TweetDataBase: a collection of 20 million tweets about Ukraine.
+ 
+Below is a snapshot: users of tweets based on the year their account is created and their language. Continue for more details below.
+
+![Number of accounts created in each Year  and Language](https://user-images.githubusercontent.com/80383987/163663489-197589bd-5ce1-4cbc-aa2b-d1e8e6cadf5e.PNG)
+
+
 TweetDataBase is a collection of 20 million unique tweets about Ukraine collected daily for 47 days. 
+## The source
 The source of our data is here: https://www.kaggle.com/datasets/bwandowando/ukraine-russian-crisis-twitter-dataset-1-2-m-rows
 There are 47 .gzip files each for one day. 
 ## Importing all databases and creating a one big dataframe for all. 
