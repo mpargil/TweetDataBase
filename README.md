@@ -21,7 +21,7 @@ print(files)
 out:
 >['0401_UkraineCombinedTweetsDeduped.csv.gzip', '0402_UkraineCombinedTweetsDeduped.csv.gzip', '0403_UkraineCombinedTweetsDeduped.csv.gzip', '0404_UkraineCombinedTweetsDeduped.csv.gzip', '0405_UkraineCombinedTweetsDeduped.csv.gzip', '0406_UkraineCombinedTweetsDeduped.csv.gzip', '0407_UkraineCombinedTweetsDeduped.csv.gzip', '0408_UkraineCombinedTweetsDeduped.csv.gzip', '0409_UkraineCombinedTweetsDeduped.csv.gzip', '0410_UkraineCombinedTweetsDeduped.csv.gzip', '0411_UkraineCombinedTweetsDeduped.csv.gzip', '0412_UkraineCombinedTweetsDeduped.csv.gzip', 'UkraineCombinedTweetsDeduped20220227-131611.csv.gzip', 'UkraineCombinedTweetsDeduped_FEB27.csv.gzip', 'UkraineCombinedTweetsDeduped_FEB28_part1.csv.gzip', 'UkraineCombinedTweetsDeduped_FEB28_part2.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR01.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR02.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR03.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR04.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR05.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR06.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR07.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR08.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR09.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR10.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR11.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR12.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR13.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR14.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR15.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR16.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR17.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR18.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR19.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR20.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR21.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR22.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR23.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR24.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR25.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR26.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR27_to_28.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR29.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR30_REAL.csv.gzip', 'UkraineCombinedTweetsDeduped_MAR31.csv.gzip']
 
-### Concatenate files together
+## Concatenate files together
 ```
 for file in files:
     df=pd.read_csv(r"C:/Users/mq20206390/Downloads/TWWETALL/"+ file, compression = "gzip" , index_col=0)
@@ -46,7 +46,7 @@ df['Account Creation Date'] =  pd.to_datetime(df['Account Creation Date'], infer
 We will get these headers:
 > User Name	Account Description	Location	Following	Followers	Total Tweets	Account Creation Date	Tweet ID	DateTime Tweet Created	Retweet Count	Text	Hashtags	Language
 
-### Delete rows containing strings for faster processing.
+## Delete rows containing strings for faster processing.
 At this stage, I just want to do some statistical analyses, so, I am deleting string columns to make processing faster. 
 ```
 df.drop(['User Name', 'Account Description', 'Location','Text','Hashtags'], axis=1, inplace=True)
@@ -59,5 +59,6 @@ We can write this new no-text dataframe to a new csv file:
 ```
 df.to_csv(r"C:\Users\[filepath]all_data3_noText.csv", encoding='utf-8')
 ```
+
 
 
